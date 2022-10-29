@@ -9,6 +9,7 @@ app.use(cors());
 app.get('/', function(req, res){
     fs.readFile(__dirname + "/" + "index.json", 'utf8', function(err, data){
         console.log(data);
+        res.contentType('application/json');
         res.end(data);
     });
 })
